@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            background-color: rgb(44, 33, 33);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        label {
+            color: white;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        h1 {
+            color: #0ff;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        }
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #0ff;
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #00ffff;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link a {
+            color: #0ff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .login-link a:hover {
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        label {
+            color: white; /* White color for labels */
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="POST">
+            {{ form.hidden_tag() }}  <!-- CSRF protection token -->
+
+            <label for="email">Email</label>
+            {{ form.email(id="email", class="form-control") }}  <!-- Email input -->
+
+            <label for="password">Password</label>
+            {{ form.password(id="password", class="form-control") }}  <!-- Password input -->
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="login-link">
+            <a href="{{ url_for('register') }}">new user</a>
+        </div>
+    </div>
+</body>
+</html>

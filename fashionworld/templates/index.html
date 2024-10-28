@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            background-color: darkcyan;
+            background-image: url(/static/static/images/bg_image_for_home.png);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x:hidden ;
+        }
+        .navigation {
+            background-color: aqua;
+            width: 100%;
+            overflow-x:hidden ;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+            float: left;
+        }
+        li a { 
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+        .image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .text-container {
+            display: flex;
+            width: 100%;
+            padding-right: 50px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .logo {
+            width: 250px; /* Adjust as needed */
+            height: 250px; /* Adjust as needed */
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 40 25px; 
+        }
+        .neon-text {
+            font-size: 90px; 
+            color: cyan; 
+            text-shadow: 
+                0 0 5px #ff1c14, 
+                0 0 10px #39ff14, 
+                0 0 20px #39ff14, 
+                0 0 40px #39ff14;
+            margin: 0 20px;
+        }
+        .get-started-button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+        .get-started-button:hover {
+            background-color: white;
+            color: black;
+        }
+        footer{
+            background-color: bisque;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('collection') }}">Designs</a></li>
+            <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+            <li style="float:right"><a href="login">Login</a></li>
+            <li style="float:right"><a href="register">Register</a></li>
+        </ul>
+    </div>
+    <div class="image">
+        <div class="text-container">
+            <span class="neon-text">Fashion</span>
+            <center><img src="/static//static/images/FW logo.png" alt="Logo" class="logo"></center>
+            <span class="neon-text">World</span>
+        </div>
+        <a href="register">
+            <button class="get-started-button">Get Started</button>
+        </a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Fashion World. Created By Sumit Sudheer Bedre</p>
+    </footer>
+</body>
+</html>

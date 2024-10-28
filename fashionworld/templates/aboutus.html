@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>About Us</title> 
+          <style> 
+          *{ margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+          }
+    body {
+        background-color: darkcyan;
+        background-image: url(/static/static/images/bg_image_for_home.png);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x:hidden ;
+    }
+    .navigation {
+        background-color: aqua;
+        width: 100%;
+        overflow-x:hidden ;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    li {
+        float: left;
+    }
+    li a { 
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: white;
+        color: black;
+        transition: background-color 0.3s ease;
+    }
+    .text-container {
+        display: flex;
+        width: 100%;
+        padding-right: 50px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+    .about-us-text {
+        color: black;
+        background-color: darkgray;
+        font-size: 24px;
+        text-align: center;
+        margin: 20px;
+    }
+    footer{
+        background-color: bisque;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+</head> 
+<body> 
+    <div class="navigation"> 
+        <ul> 
+            <li><a href="{{ url_for('index') }}">Home</a></li> <li><a href="{{ url_for('collection') }}">Designs</a></li> <li><a href="{{ url_for('aboutus') }}">About Us</a></li> <li style="float:right"><a href="login">Login</a></li> <li style="float:right"><a href="register">Register</a></li> 
+        </ul> 
+    </div> 
+    <div class="text-container"> 
+        <span class="about-us-text"> 
+            <p>Welcome to Fashion World, your one-stop destination for the latest and trendiest fashion designs. We are a team of passionate fashion enthusiasts who strive to bring you the best of fashion from around the world. Our mission is to provide our customers with high-quality, stylish, and affordable fashion items that make them look and feel great. We believe that fashion is a form of self-expression and we are committed to helping our customers express themselves through our unique and diverse collection of fashion items.</p><br>
+            <p>
+             At Fashion World, we are committed to providing exceptional customer service. Our team is always available to answer any questions you may have and to help you find the perfect fashion item for any occasion. We also offer a 100% satisfaction guarantee, so you can shop with confidence knowing that you are getting the best possible product and service. Thank you for choosing Fashion World. We look forward to serving you and helping you look and feel your best. </p></span> 
+    </div> 
+    <footer> 
+        <p>&copy; 2024 Fashion World. Created By Sumit Sudheer Bedre</p> 
+    </footer> 
+</body> 
+</html>

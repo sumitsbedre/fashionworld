@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            background-color: darkcyan;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x:hidden ;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px;
+            text-align: center; /* Center text in the container */
+        }
+        .cart-item {
+            background-color: #005757;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px auto; /* Center items */
+            display: inline-block; /* Change to inline-block for square boxes */
+            width: 200px; /* Set a fixed width for square boxes */
+            height: 300px; /* Set a fixed height for square boxes */
+            vertical-align: top; /* Align items at the top */
+        }
+        .cart-item img {
+            max-width: 100%; /* Ensure image fits within the box */
+            max-height: 150px; /* Limit image height */
+            border-radius: 5px;
+        }
+        .cart-item h2, .cart-item p {
+            margin: 0;
+            text-align: center;
+        }
+        .proceed-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 20px; /* Rounded corners */
+            text-align: center;
+            margin: 20px 5px; /* Margin for spacing between buttons */
+        }
+        .remove-button {
+            background-color: red; /* Red color */
+            color: white; /* Text color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding around the text */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+            border-radius: 20px; /* Rounded corners */
+        }
+        .remove-button:hover {
+            background-color: tomato; /* Tomato color on hover */
+        }
+        footer{
+            background-color: bisque;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Cart</h1>
+        {% for product in products %}
+        <div class="cart-item">
+            <img src="{{ url_for('static', filename=product[2]) }}" alt="{{ product[1] }}">
+            <h2>{{ product[1] }}</h2>
+            <p>Price: ₹{{ product[3] }}</p>
+            <form action="{{ url_for('remove_from_cart') }}" method="post">
+                <input type="hidden" name="product_id" value="{{ product[0] }}">
+                <button type="submit" class="remove-button">Remove</button>
+            </form>
+        </div>
+        {% endfor %}
+        <div>
+            <a href="{{ url_for('collection') }}" class="proceed-button">Add More</a>
+            <a href="{{ url_for('checkout') }}" class="proceed-button">Checkout</a>
+        </div>
+    </div>
+    <footer> 
+        <p>&copy; 2024 Fashion World. Created By Sumit Sudheer Bedre</p> 
+    </footer>
+</body>
+</html>
