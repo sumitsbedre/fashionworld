@@ -23,6 +23,8 @@ Hope you enjoy it and support me... For more projects follow up.
 - strong internet connection wherever required
 
 ## Installation
+One should have the applications of XAMPP and a Code Editor
+
 Install the required Python libraries using `pip`:
 ```sh
 pip install flask flask_wtf wtforms bycrpt flask_mysql
