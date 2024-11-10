@@ -59,7 +59,11 @@ One can add:
 
 - Addtional Cloth designs with the proper description directly using MySQL or even in PHPMyAdmin command pallate with atractive images
 - Additinal Pages and sections can be added for evolved features and additional functionalitires using flask redirections and html pages in the template folder
-- customize the CSS styles for more attractive interface and better navigation through the pages with animations and toggle aspects
+- customize the CSS styles for more attractive interface and better navigation through the pages with animations and toggle aspects.
+
+## Copyrights
+
+You can use the website as of you want using as of customized format. But Please DO NOT make any claims being as its own. Respect the work.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request with any changes or improvements.
